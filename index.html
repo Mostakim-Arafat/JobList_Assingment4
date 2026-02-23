@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+    <!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="bg-base-200 w-11/12 mx-auto">
+    <header class=" pt-4 pb-5 space-y-3 border-b-2 border-gray-400">
+        <h1 class="text-primary font-bold text-2xl">Job Application Tracker</h1>
+        <div class="grid grid-cols-3 gap-3">
+            <button class="btn flex flex-col h-full bg-base-100  inline-block text-left py-2  rounded-md">
+                <p>Total</p>
+                <h1>8</h1>
+            </button>
+            <button class="btn flex flex-col h-full bg-base-100  inline-block py-2 text-left rounded-md">
+                <p>Total</p>
+                <h1>8</h1>
+            </button>
+            <button class="btn flex flex-col h-full bg-base-100  inline-block py-2 text-left rounded-md">
+                <p>Total</p>
+                <h1>8</h1>
+            </button>
+        </div>
+    </header>
+    <main class="">
+        <div class="flex justify-between items-center">
+            <h3>Available Jobs</h3>
+            <p>8 jobs</p>
+        </div>
+        <div>
+            <button class="btn btn-xs">All</button>
+            <button class="btn btn-xs">Interview</button>
+            <button class="btn btn-xs">Rejected</button>
+        </div>
+        <section class="bg-base-100">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3>Mobile First Corp</h3>
+                    <p>React Native Developer</p>
+                </div>
+                <div class="border-2 rounded-full p-1">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+
+            <ul class="flex gap-5 list-disc">
+                <li class="">Remote</li>
+                <li>Full-time</li>
+                <li>$130,000 - $175,000</li>
+            </ul>
+            <button class="btn btn-primary btn-soft">NOT APPLIED</button>
+            <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users
+                worldwide.</p>
+            <div>
+                <button class="btn btn-outline btn-success">INTERVIEW</button>
+                <button class="btn btn-outline btn-error">REJECTED</button>
+            </div>
+        </section>
+        <!-- 7 times -->
+         <section class="py-28 px-6">
+            <div class="text-center">
+                <div class="flex justify-center">
+                    <img src="./jobs.png" alt="">
+                </div>
+                <h1>No jobs available</h1>
+                <p>Check back soon for new job opportunities</p>
+            </div>
+         </section>
+    </main>
+</body>
+
+</html>
