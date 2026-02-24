@@ -3,20 +3,28 @@ function idtext(id){
    return document.getElementById(id).innerText
 }
 let jobCount = document.getElementsByClassName('jobCount')
+let cardPart = document.querySelectorAll('main div section')
 // button function
 document.getElementById('interviewList').addEventListener('click',function(){
-    document.getElementById('cardContainer').classList.add('hidden')
+    //hiding card part
+    for(const i of cardPart){
+        i.classList.add('hidden')
+    }
     document.getElementById('nullPart').classList.add('hidden')
     if(idtext('interviewCount') == 0){
         document.getElementById('nullPart').classList.remove('hidden')
     }
     else{
-
+        //unhide them who has batch interviewed.
+       console.log( )
     }
 
 })
 document.getElementById('rejectList').addEventListener('click',function(){
-    document.getElementById('cardContainer').classList.add('hidden')
+   //hiding card part
+    for(const i of cardPart){
+        i.classList.add('hidden')
+    }
     document.getElementById('nullPart').classList.add('hidden')
     if(idtext('rejectCount') == 0){
         document.getElementById('nullPart').classList.remove('hidden')
@@ -27,10 +35,15 @@ document.getElementById('rejectList').addEventListener('click',function(){
 
 })
 document.getElementById('allList').addEventListener('click',function(){
-    document.getElementById('cardContainer').classList.add('hidden')
+   //hiding card part
+    for(const i of cardPart){
+        i.classList.add('hidden')
+    }
     document.getElementById('nullPart').classList.add('hidden')
     if( jobCount.innerText !== 0){
-        document.getElementById('cardContainer').classList.remove('hidden')
+        for(const i of cardPart){
+            i.classList.remove('hidden')
+        }
     }
     else{
 
