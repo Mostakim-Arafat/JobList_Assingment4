@@ -54,20 +54,28 @@ for(const i of deleteIcon){
 const Btn = document.querySelectorAll('main section button')
 for(const i of Btn){
     if(i.innerText === "INTERVIEW"){
+        const ielement = i.parentNode.parentNode.querySelector('button')
         i.addEventListener('click',function(){
-            //add badge 
-            i.parentNode.parentNode.querySelector('button').innerText = "interviewed"
-            i.parentNode.parentNode.querySelector('button').style.backgroundColor = '#BBF7D0'
-            i.parentNode.parentNode.querySelector('button').style.color = '#16A34A'
-            //increase interview count
-               //if//rejected or applied
+             //increase interview count
+               if(ielement.innerText === 'rejected' || ielement.innerText === "NOT APPLIED"){
            document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
+               }
+            //add badge 
+            ielement.innerText = "interviewed"
+            ielement.style.backgroundColor = '#BBF7D0'
+            ielement.style.color = '#16A34A'
+           
             //show in interview page
 
         })
     }
     else if (i.innerText === "REJECTED"){
+                const ielement = i.parentNode.parentNode.querySelector('button')
         i.addEventListener('click',function(){
+               //increase interview count
+               if(ielement.innerText === 'interviewed' || ielement.innerText === "NOT APPLIED"){
+           document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) + 1
+               }
          //add badge
          i.parentNode.parentNode.querySelector('button').innerText = "rejected"
             i.parentNode.parentNode.querySelector('button').style.backgroundColor = '#FECACA'
