@@ -18,14 +18,14 @@ document.getElementById('interviewList').addEventListener('click', function () {
     }
     else {
         //show interview list
-        let count =0 
+       
         for(const i of Btn){
             if(i.innerText === 'interviewed'){
                 i.parentNode.parentNode.classList.remove('hidden')
-                count = count + 1
+                
             }
         }
-        document.getElementById('interviewCount').innerText = count
+        
 
     }
 })
@@ -40,14 +40,14 @@ document.getElementById('rejectList').addEventListener('click', function () {
     }
     else {
          //unhide them who has batch interviewed.
-         let count = 0 
+         
         for(const i of Btn){
             if(i.innerText === 'rejected'){
                 i.parentNode.parentNode.classList.remove('hidden')
-                count = count + 1
+              
             }
         }
-         document.getElementById('rejectCount').innerText = count
+        
 
     }
 
@@ -89,8 +89,13 @@ for (const i of Btn) {
         const ielement = i.parentNode.parentNode.querySelector('button')
         i.addEventListener('click', function () {
             //increase interview count
-            if (ielement.innerText === 'rejected' || ielement.innerText === "NOT APPLIED") {
+            if (ielement.innerText === 'rejected') {
                 document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
+                document.getElementById('rejectCount').innerText = Number(idtext('rejectCount'))-1
+                i.parentNode.parentNode.classList.add('hidden')
+            }
+            else if (ielement.innerText === 'NOT APPLIED'){
+                 document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
             }
             //add badge 
             ielement.innerText = "interviewed"
@@ -105,7 +110,12 @@ for (const i of Btn) {
         const ielement = i.parentNode.parentNode.querySelector('button')
         i.addEventListener('click', function () {
             //increase interview count
-            if (ielement.innerText === 'interviewed' || ielement.innerText === "NOT APPLIED") {
+            if (ielement.innerText === 'interviewed') {
+                document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) + 1
+                document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) - 1
+                i.parentNode.parentNode.classList.add('hidden')
+            }
+            else if (ielement.innerText === "NOT APPLIED"){
                 document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) + 1
             }
             //add badge
