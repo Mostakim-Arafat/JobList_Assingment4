@@ -15,6 +15,7 @@
         * {
             font-family: "Geist", sans-serif;
         }
+        
     </style>
 
     <!-- tailwind -->
@@ -51,9 +52,9 @@
             <p><span class="jobCount">8</span> jobs</p>
         </div>
         <div class="flex gap-2.5 mb-4">
-            <button class="btn btn-sm btn-primary px-7 py-2" id="allList">All</button>
-            <button class="btn btn-sm" id="interviewList">Interview</button>
-            <button class="btn btn-sm" id="rejectList">Rejected</button>
+            <button class="btn btn-sm  px-7 py-2" id="allList" onclick="design('allList')">All</button>
+            <button class="btn btn-sm" id="interviewList" onclick="design('interviewList')">Interview</button>
+            <button class="btn btn-sm" id="rejectList" onclick="design('rejectList')">Rejected</button>
         </div>
         <div id="cardContainer">
             <!-- card 1 -->
