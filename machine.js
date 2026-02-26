@@ -18,14 +18,14 @@ document.getElementById('interviewList').addEventListener('click', function () {
     }
     else {
         //show interview list
-       
-        for(const i of Btn){
-            if(i.innerText === 'interviewed'){
+
+        for (const i of Btn) {
+            if (i.innerText === 'interviewed') {
                 i.parentNode.parentNode.classList.remove('hidden')
-                
+
             }
         }
-        
+
 
     }
 })
@@ -39,15 +39,15 @@ document.getElementById('rejectList').addEventListener('click', function () {
         document.getElementById('nullPart').classList.remove('hidden')
     }
     else {
-         //unhide them who has batch interviewed.
-         
-        for(const i of Btn){
-            if(i.innerText === 'rejected'){
+        //unhide them who has batch interviewed.
+
+        for (const i of Btn) {
+            if (i.innerText === 'rejected') {
                 i.parentNode.parentNode.classList.remove('hidden')
-              
+
             }
         }
-        
+
 
     }
 
@@ -64,7 +64,7 @@ document.getElementById('allList').addEventListener('click', function () {
         }
     }
     else {
-       document.getElementById('nullPart').classList.remove('hidden')
+        document.getElementById('nullPart').classList.remove('hidden')
     }
 
 })
@@ -91,18 +91,19 @@ for (const i of Btn) {
             //increase interview count
             if (ielement.innerText === 'rejected') {
                 document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
-                document.getElementById('rejectCount').innerText = Number(idtext('rejectCount'))-1
+                document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) - 1
                 i.parentNode.parentNode.classList.add('hidden')
             }
-            else if (ielement.innerText === 'NOT APPLIED'){
-                 document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
+            else if (ielement.innerText === 'NOT APPLIED') {
+                document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) + 1
             }
             //add badge 
             ielement.innerText = "interviewed"
             ielement.style.backgroundColor = '#BBF7D0'
             ielement.style.color = '#16A34A'
 
-            
+
+
 
         })
     }
@@ -114,8 +115,9 @@ for (const i of Btn) {
                 document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) + 1
                 document.getElementById('interviewCount').innerText = Number(idtext('interviewCount')) - 1
                 i.parentNode.parentNode.classList.add('hidden')
+
             }
-            else if (ielement.innerText === "NOT APPLIED"){
+            else if (ielement.innerText === "NOT APPLIED") {
                 document.getElementById('rejectCount').innerText = Number(idtext('rejectCount')) + 1
             }
             //add badge
@@ -130,10 +132,18 @@ for (const i of Btn) {
 }
 
 // color toggle
-function design(id){
-   
-    document.getElementById(id).style.backgroundColor = '#570DF8'
-    document.getElementById(id).style.color = 'white'
+function design(id) {
+    for (const t of btnId) {
+        const getid = document.getElementById(t)
+        if (t === id) {
+            getid.classList.remove('btn-primary')
+            getid.classList.add('btn-primary')
+        }
+        else {
+            getid.classList.add('btn-primary')
+            getid.classList.remove('btn-primary')
+        }
+    }
 }
 
 
