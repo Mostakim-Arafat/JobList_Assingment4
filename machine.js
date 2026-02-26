@@ -132,6 +132,7 @@ for (const i of Btn) {
 }
 
 // color toggle
+const btnId = ['allList', 'interviewList', 'rejectList']
 function design(id) {
     for (const t of btnId) {
         const getid = document.getElementById(t)
